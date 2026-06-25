@@ -84,9 +84,9 @@ class TodoViewTestCase(TestCase):
         self.assertEqual(response.context['tasks'][1], task1)
     
     def test_index_get_order_due(self):
-        task1=Task(title='task1', due_at = timezone.make_aware(datetime(2024, 7, 1)))
+        task1 = Task(title='task1', due_at = timezone.make_aware(datetime(2024, 7, 1)))
         task1.save()
-        task2=Task(title = 'task2', due_at=timezone.make_aware(datetime(2024, 8, 1)))
+        task2 = Task(title = 'task2', due_at=timezone.make_aware(datetime(2024, 8, 1)))
         task2.save()
         client = Client()
         response = client.get('/?order=due')
